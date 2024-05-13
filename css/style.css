@@ -1,0 +1,23 @@
+:root {
+    --bs-primary: #00334C; /* Replace #yourNewColor with the hex code of the color you want */
+    --bs-secondary: #56B2CB;
+    --bs-third: #F7E214;
+    --bs-fourth: #818387;
+}
+
+body{
+    background-color: var(--bs-primary) !important;
+    color: whitesmoke;
+}
+
+.border-text{
+    color: whitesmoke;
+    border: .5em ridge var(--bs-secondary);
+    border-color: var(--bs-primary) !important;
+    margin: 1em;
+    padding: 1em;
+}
+
+.border-primary{
+    border-color: var(--bs-third) !important;
+}
