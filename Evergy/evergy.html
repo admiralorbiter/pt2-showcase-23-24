@@ -1,681 +1,85 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Evergy</title>
-<link href="../css/style.css" rel="stylesheet" type="text/css" id="theme-style"/>
-<style>
-/* cspell:disable-file */
-/* webkit printing magic: print all background colors */
-html {
-	-webkit-print-color-adjust: exact;
-}
-* {
-	box-sizing: border-box;
-	-webkit-print-color-adjust: exact;
-}
-
-html,
-body {
-	margin: 0;
-	padding: 0;
-}
-@media only screen {
-	body {
-		margin: 2em auto;
-		max-width: 900px;
-		color: whitesmoke;
-	}
-}
-
-body {
-	line-height: 1.5;
-	white-space: pre-wrap;
-}
-
-a,
-a.visited {
-	color: inherit;
-	text-decoration: underline;
-}
-
-.pdf-relative-link-path {
-	font-size: 80%;
-	color: #444;
-}
-
-h1,
-h2,
-h3 {
-	letter-spacing: -0.01em;
-	line-height: 1.2;
-	font-weight: 600;
-	margin-bottom: 0;
-}
-
-.page-title {
-	font-size: 2.5rem;
-	font-weight: 700;
-	margin-top: 0;
-	margin-bottom: 0.75em;
-}
-
-h1 {
-	font-size: 1.875rem;
-	margin-top: 1.875rem;
-}
-
-h2 {
-	font-size: 1.5rem;
-	margin-top: 1.5rem;
-}
-
-h3 {
-	font-size: 1.25rem;
-	margin-top: 1.25rem;
-}
-
-.source {
-	border: 1px solid #ddd;
-	border-radius: 3px;
-	padding: 1.5em;
-	word-break: break-all;
-}
-
-.callout {
-	border-radius: 3px;
-	padding: 1rem;
-}
-
-figure {
-	margin: 1.25em 0;
-	page-break-inside: avoid;
-}
-
-figcaption {
-	opacity: 0.5;
-	font-size: 85%;
-	margin-top: 0.5em;
-}
-
-mark {
-	background-color: transparent;
-}
-
-.indented {
-	padding-left: 1.5em;
-}
-
-hr {
-	background: transparent;
-	display: block;
-	width: 100%;
-	height: 1px;
-	visibility: visible;
-	border: none;
-	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
-}
-
-img {
-	max-width: 100%;
-}
-
-@media only print {
-	img {
-		max-height: 100vh;
-		object-fit: contain;
-	}
-}
-
-@page {
-	margin: 1in;
-}
-
-.collection-content {
-	font-size: 0.875rem;
-}
-
-.column-list {
-	display: flex;
-	justify-content: space-between;
-}
-
-.column {
-	padding: 0 1em;
-}
-
-.column:first-child {
-	padding-left: 0;
-}
-
-.column:last-child {
-	padding-right: 0;
-}
-
-.table_of_contents-item {
-	display: block;
-	font-size: 0.875rem;
-	line-height: 1.3;
-	padding: 0.125rem;
-}
-
-.table_of_contents-indent-1 {
-	margin-left: 1.5rem;
-}
-
-.table_of_contents-indent-2 {
-	margin-left: 3rem;
-}
-
-.table_of_contents-indent-3 {
-	margin-left: 4.5rem;
-}
-
-.table_of_contents-link {
-	text-decoration: none;
-	opacity: 0.7;
-	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
-}
-
-table,
-th,
-td {
-	border: 1px solid rgba(55, 53, 47, 0.09);
-	border-collapse: collapse;
-}
-
-table {
-	border-left: none;
-	border-right: none;
-}
-
-th,
-td {
-	font-weight: normal;
-	padding: 0.25em 0.5em;
-	line-height: 1.5;
-	min-height: 1.5em;
-	text-align: left;
-}
-
-th {
-	color: rgba(55, 53, 47, 0.6);
-}
-
-ol,
-ul {
-	margin: 0;
-	margin-block-start: 0.6em;
-	margin-block-end: 0.6em;
-}
-
-li > ol:first-child,
-li > ul:first-child {
-	margin-block-start: 0.6em;
-}
-
-ul > li {
-	list-style: disc;
-}
-
-ul.to-do-list {
-	padding-inline-start: 0;
-}
-
-ul.to-do-list > li {
-	list-style: none;
-}
-
-.to-do-children-checked {
-	text-decoration: line-through;
-	opacity: 0.375;
-}
-
-ul.toggle > li {
-	list-style: none;
-}
-
-ul {
-	padding-inline-start: 1.7em;
-}
-
-ul > li {
-	padding-left: 0.1em;
-}
-
-ol {
-	padding-inline-start: 1.6em;
-}
-
-ol > li {
-	padding-left: 0.2em;
-}
-
-.mono ol {
-	padding-inline-start: 2em;
-}
-
-.mono ol > li {
-	text-indent: -0.4em;
-}
-
-.toggle {
-	padding-inline-start: 0em;
-	list-style-type: none;
-}
-
-/* Indent toggle children */
-.toggle > li > details {
-	padding-left: 1.7em;
-}
-
-.toggle > li > details > summary {
-	margin-left: -1.1em;
-}
-
-.selected-value {
-	display: inline-block;
-	padding: 0 0.5em;
-	background: rgba(206, 205, 202, 0.5);
-	border-radius: 3px;
-	margin-right: 0.5em;
-	margin-top: 0.3em;
-	margin-bottom: 0.3em;
-	white-space: nowrap;
-}
-
-.collection-title {
-	display: inline-block;
-	margin-right: 1em;
-}
-
-.page-description {
-    margin-bottom: 2em;
-}
-
-.simple-table {
-	margin-top: 1em;
-	font-size: 0.875rem;
-	empty-cells: show;
-}
-.simple-table td {
-	height: 29px;
-	min-width: 120px;
-}
-
-.simple-table th {
-	height: 29px;
-	min-width: 120px;
-}
-
-.simple-table-header-color {
-	background: rgb(247, 246, 243);
-	color: black;
-}
-.simple-table-header {
-	font-weight: 500;
-}
-
-time {
-	opacity: 0.5;
-}
-
-.icon {
-	display: inline-block;
-	max-width: 1.2em;
-	max-height: 1.2em;
-	text-decoration: none;
-	vertical-align: text-bottom;
-	margin-right: 0.5em;
-}
-
-img.icon {
-	border-radius: 3px;
-}
-
-.user-icon {
-	width: 1.5em;
-	height: 1.5em;
-	border-radius: 100%;
-	margin-right: 0.5rem;
-}
-
-.user-icon-inner {
-	font-size: 0.8em;
-}
-
-.text-icon {
-	border: 1px solid #000;
-	text-align: center;
-}
-
-.page-cover-image {
-	display: block;
-	object-fit: cover;
-	width: 100%;
-	max-height: 30vh;
-}
-
-.page-header-icon {
-	font-size: 3rem;
-	margin-bottom: 1rem;
-}
-
-.page-header-icon-with-cover {
-	margin-top: -0.72em;
-	margin-left: 0.07em;
-}
-
-.page-header-icon img {
-	border-radius: 3px;
-}
-
-.link-to-page {
-	margin: 1em 0;
-	padding: 0;
-	border: none;
-	font-weight: 500;
-}
-
-p > .user {
-	opacity: 0.5;
-}
-
-td > .user,
-td > time {
-	white-space: nowrap;
-}
-
-input[type="checkbox"] {
-	transform: scale(1.5);
-	margin-right: 0.6em;
-	vertical-align: middle;
-}
-
-p {
-	margin-top: 0.5em;
-	margin-bottom: 0.5em;
-}
-
-.image {
-	border: none;
-	margin: 1.5em 0;
-	padding: 0;
-	border-radius: 0;
-	text-align: center;
-}
-
-.code,
-code {
-	background: rgba(135, 131, 120, 0.15);
-	border-radius: 3px;
-	padding: 0.2em 0.4em;
-	border-radius: 3px;
-	font-size: 85%;
-	tab-size: 2;
-}
-
-code {
-	color: #eb5757;
-}
-
-.code {
-	padding: 1.5em 1em;
-}
-
-.code-wrap {
-	white-space: pre-wrap;
-	word-break: break-all;
-}
-
-.code > code {
-	background: none;
-	padding: 0;
-	font-size: 100%;
-	color: inherit;
-}
-
-blockquote {
-	font-size: 1.25em;
-	margin: 1em 0;
-	padding-left: 1em;
-	border-left: 3px solid rgb(55, 53, 47);
-}
-
-.bookmark {
-	text-decoration: none;
-	max-height: 8em;
-	padding: 0;
-	display: flex;
-	width: 100%;
-	align-items: stretch;
-}
-
-.bookmark-title {
-	font-size: 0.85em;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	height: 1.75em;
-	white-space: nowrap;
-}
-
-.bookmark-text {
-	display: flex;
-	flex-direction: column;
-}
-
-.bookmark-info {
-	flex: 4 1 180px;
-	padding: 12px 14px 14px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-}
-
-.bookmark-image {
-	width: 33%;
-	flex: 1 1 180px;
-	display: block;
-	position: relative;
-	object-fit: cover;
-	border-radius: 1px;
-}
-
-.bookmark-description {
-	color: rgba(55, 53, 47, 0.6);
-	font-size: 0.75em;
-	overflow: hidden;
-	max-height: 4.5em;
-	word-break: break-word;
-}
-
-.bookmark-href {
-	font-size: 0.75em;
-	margin-top: 0.25em;
-}
-
-.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
-.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
-.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
-.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
-.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
-.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
-.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
-.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
-.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
-.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
-.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
-.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
-.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
-.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
-.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
-.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
-.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
-.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
-.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
-.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
-.highlight-default {
-	color: rgba(55, 53, 47, 1);
-}
-.highlight-gray {
-	color: rgba(120, 119, 116, 1);
-	fill: rgba(120, 119, 116, 1);
-}
-.highlight-brown {
-	color: rgba(159, 107, 83, 1);
-	fill: rgba(159, 107, 83, 1);
-}
-.highlight-orange {
-	color: rgba(217, 115, 13, 1);
-	fill: rgba(217, 115, 13, 1);
-}
-.highlight-yellow {
-	color: rgba(203, 145, 47, 1);
-	fill: rgba(203, 145, 47, 1);
-}
-.highlight-teal {
-	color: rgba(68, 131, 97, 1);
-	fill: rgba(68, 131, 97, 1);
-}
-.highlight-blue {
-	color: rgba(51, 126, 169, 1);
-	fill: rgba(51, 126, 169, 1);
-}
-.highlight-purple {
-	color: rgba(144, 101, 176, 1);
-	fill: rgba(144, 101, 176, 1);
-}
-.highlight-pink {
-	color: rgba(193, 76, 138, 1);
-	fill: rgba(193, 76, 138, 1);
-}
-.highlight-red {
-	color: rgba(212, 76, 71, 1);
-	fill: rgba(212, 76, 71, 1);
-}
-.highlight-gray_background {
-	background: rgba(241, 241, 239, 1);
-}
-.highlight-brown_background {
-	background: rgba(244, 238, 238, 1);
-}
-.highlight-orange_background {
-	background: rgba(251, 236, 221, 1);
-}
-.highlight-yellow_background {
-	background: rgba(251, 243, 219, 1);
-}
-.highlight-teal_background {
-	background: rgba(237, 243, 236, 1);
-}
-.highlight-blue_background {
-	background: rgba(231, 243, 248, 1);
-}
-.highlight-purple_background {
-	background: rgba(244, 240, 247, 0.8);
-}
-.highlight-pink_background {
-	background: rgba(249, 238, 243, 0.8);
-}
-.highlight-red_background {
-	background: rgba(253, 235, 236, 1);
-}
-.block-color-default {
-	color: inherit;
-	fill: inherit;
-}
-.block-color-gray {
-	color: rgba(120, 119, 116, 1);
-	fill: rgba(120, 119, 116, 1);
-}
-.block-color-brown {
-	color: rgba(159, 107, 83, 1);
-	fill: rgba(159, 107, 83, 1);
-}
-.block-color-orange {
-	color: rgba(217, 115, 13, 1);
-	fill: rgba(217, 115, 13, 1);
-}
-.block-color-yellow {
-	color: rgba(203, 145, 47, 1);
-	fill: rgba(203, 145, 47, 1);
-}
-.block-color-teal {
-	color: rgba(68, 131, 97, 1);
-	fill: rgba(68, 131, 97, 1);
-}
-.block-color-blue {
-	color: rgba(51, 126, 169, 1);
-	fill: rgba(51, 126, 169, 1);
-}
-.block-color-purple {
-	color: rgba(144, 101, 176, 1);
-	fill: rgba(144, 101, 176, 1);
-}
-.block-color-pink {
-	color: rgba(193, 76, 138, 1);
-	fill: rgba(193, 76, 138, 1);
-}
-.block-color-red {
-	color: rgba(212, 76, 71, 1);
-	fill: rgba(212, 76, 71, 1);
-}
-.block-color-gray_background {
-	background: rgba(241, 241, 239, 1);
-}
-.block-color-brown_background {
-	background: rgba(244, 238, 238, 1);
-}
-.block-color-orange_background {
-	background: rgba(251, 236, 221, 1);
-}
-.block-color-yellow_background {
-	background: rgba(251, 243, 219, 1);
-}
-.block-color-teal_background {
-	background: rgba(237, 243, 236, 1);
-}
-.block-color-blue_background {
-	background: rgba(231, 243, 248, 1);
-}
-.block-color-purple_background {
-	background: rgba(244, 240, 247, 0.8);
-}
-.block-color-pink_background {
-	background: rgba(249, 238, 243, 0.8);
-}
-.block-color-red_background {
-	background: rgba(253, 235, 236, 1);
-}
-.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
-.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
-.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
-.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
-.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
-.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
-.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
-.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
-.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
-.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
-.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
-.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
-.select-value-color-pageGlass { background-color: undefined; }
-.select-value-color-washGlass { background-color: undefined; }
-
-.checkbox {
-	display: inline-flex;
-	vertical-align: text-bottom;
-	width: 16;
-	height: 16;
-	background-size: 16px;
-	margin-left: 2px;
-	margin-right: 5px;
-}
-
-.checkbox-on {
-	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
-}
-
-.checkbox-off {
-	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
-}
-	
-</style></head><body><article id="083e76d8-8807-4fd2-a94e-5b45060132a1" class="page sans"><header><h1 class="page-title">Evergy</h1><p class="page-description"></p></header><div class="page-body"><h1 id="23fcfa2c-5008-4707-9b5c-2f20396e13b4" class="">Survey and Data Analysis</h1><h3 id="f82bae1d-0234-402b-9394-2cbaf736ddff" class=""><strong>Survey on Career Choices: Focus on Line Work in Kansas City</strong></h3><h3 id="59363470-2924-4bc7-b961-7df4ba910251" class=""><strong>Part 1: Demographic Information</strong></h3><ol type="1" id="95e2ecab-8470-4397-9d62-e1f5c856087a" class="numbered-list" start="1"><li><strong>Age</strong>: [18-20] [21-23] [24-25]</li></ol><ol type="1" id="bad41218-1b2c-4a0d-840c-cee2fba852c5" class="numbered-list" start="2"><li><strong>Gender</strong>: [Male] [Female] [Non-binary] [Prefer not to say]</li></ol><ol type="1" id="8fa73175-10dc-46a9-aea9-9c29de2f0b6b" class="numbered-list" start="3"><li><strong>Education Level</strong>: [High School] [Some College] [Associate Degree] [Bachelor&#x27;s Degree] [Other]</li></ol><ol type="1" id="ad6fd43f-0310-427f-973a-caa9cf0a9463" class="numbered-list" start="4"><li><strong>Current Employment Status</strong>: [Employed Full-Time] [Employed Part-Time] [Unemployed] [Student]</li></ol><h3 id="0301d8bc-c827-430e-bb65-aa39196d37aa" class=""><strong>Part 2: Awareness and Perception</strong></h3><ol type="1" id="2387b05c-a0cc-4634-841a-5af936a84ff5" class="numbered-list" start="1"><li><strong>Are you aware of career opportunities as a line worker?</strong> [Yes] [No]</li></ol><ol type="1" id="95522da9-ea17-48dd-9fec-2629d59439cc" class="numbered-list" start="2"><li><strong>How did you learn about line work as a career option?</strong> (Select all that apply)<ul id="26fa9e58-8238-4660-9b4d-3e0d79fa769e" class="bulleted-list"><li style="list-style-type:disc">[School or college]</li></ul><ul id="cc7bd2a7-1074-4d19-8bf9-4fe84c380d82" class="bulleted-list"><li style="list-style-type:disc">[Job fairs]</li></ul><ul id="151106ab-2972-410c-9484-125d5c03fb99" class="bulleted-list"><li style="list-style-type:disc">[Online]</li></ul><ul id="cb12f46a-0517-4dfa-b51b-ffe30139208a" class="bulleted-list"><li style="list-style-type:disc">[Friends or family]</li></ul><ul id="964f2366-c045-4d41-827e-ad84dc74d009" class="bulleted-list"><li style="list-style-type:disc">[Other; Please specify:________]</li></ul></li></ol><ol type="1" id="4d5fcb82-3043-4b88-a55a-098c1b82c6ca" class="numbered-list" start="3"><li><strong>What is your perception of line work?</strong> (Rate from 1 - Very Negative to 5 - Very Positive)</li></ol><h3 id="35b637e0-31b0-4683-8145-499f5a11f5a3" class=""><strong>Part 3: Influencing Factors</strong></h3><ol type="1" id="9166b29e-f067-4069-bb38-1b54804748f8" class="numbered-list" start="1"><li><strong>What factors influence your career choice the most?</strong> (Select up to three)<ul id="9774d94f-a5e0-4ea9-94fc-1a6c92ac881d" class="bulleted-list"><li style="list-style-type:disc">[Salary]</li></ul><ul id="16010457-e747-4ca2-933a-3bab7ef2dab6" class="bulleted-list"><li style="list-style-type:disc">[Job security]</li></ul><ul id="f7412698-0ef6-4a16-92f5-cccabe1e4740" class="bulleted-list"><li style="list-style-type:disc">[Work environment]</li></ul><ul id="7d3ada1b-a859-4f3b-998b-1d67469fd305" class="bulleted-list"><li style="list-style-type:disc">[Physical demands]</li></ul><ul id="eb009a5c-a3c1-4fc8-b4bd-17bf4fa4d545" class="bulleted-list"><li style="list-style-type:disc">[Interest in the field]</li></ul><ul id="13343040-2441-4f1a-965b-7cc6da9df87c" class="bulleted-list"><li style="list-style-type:disc">[Influence from family or friends]</li></ul><ul id="57e22dad-2e46-45e7-9d7b-62352a592383" class="bulleted-list"><li style="list-style-type:disc">[Career growth opportunities]</li></ul><ul id="46fac73e-3485-4c3d-9489-8d98355fb2f9" class="bulleted-list"><li style="list-style-type:disc">[Other; Please specify:________]</li></ul></li></ol><ol type="1" id="9147ffb9-9cc1-4b0e-ba2f-6d5aded3ab81" class="numbered-list" start="2"><li><strong>Would you consider a career as a line worker?</strong> [Yes] [No] [Maybe]</li></ol><ol type="1" id="e982ef73-2672-4403-b3d8-7042f6a3ee4f" class="numbered-list" start="3"><li><strong>If you answered &#x27;No&#x27; or &#x27;Maybe&#x27; to the previous question, what are the main reasons?</strong> (Select all that apply)<ul id="e4ee62d8-fe2b-42d0-845c-89e9361d271c" class="bulleted-list"><li style="list-style-type:disc">[Lack of information about the role]</li></ul><ul id="9933b7c4-4e25-4514-b15a-249940ea94ef" class="bulleted-list"><li style="list-style-type:disc">[Perceived danger]</li></ul><ul id="744340e4-0ee0-47e4-85ab-bb21da2d9fa7" class="bulleted-list"><li style="list-style-type:disc">[Physical demands]</li></ul><ul id="30ac1c07-5808-4879-ac9c-9668891ac016" class="bulleted-list"><li style="list-style-type:disc">[Lack of interest in the field]</li></ul><ul id="4288ac2a-b329-4a5e-9ee9-e0161d118a2c" class="bulleted-list"><li style="list-style-type:disc">[Salary concerns]</li></ul><ul id="d6513fce-167a-43cd-8210-fd1dc08a4078" class="bulleted-list"><li style="list-style-type:disc">[Lack of training or educational opportunities]</li></ul><ul id="608200b1-ebf0-4395-a1c7-ddcb0912d5cf" class="bulleted-list"><li style="list-style-type:disc">[Other; Please specify:________]</li></ul></li></ol><h3 id="e5f3da42-1d9c-47a0-94d3-5ee89189cc8c" class=""><strong>Part 4: Additional Insights</strong></h3><ol type="1" id="fa416d57-792e-46ec-bc26-203fdbb821d8" class="numbered-list" start="1"><li><strong>What could potentially attract you to a career as a line worker?</strong> (Open-ended)</li></ol><ol type="1" id="b0c22ba7-e754-4e6d-a801-06119d6ab955" class="numbered-list" start="2"><li><strong>Do you have any additional comments or suggestions regarding career choice and line work?</strong> (Open-ended)</li></ol><h3 id="466ee89c-d4a8-4b82-a6b7-d3ac3b786beb" class="">Data Analysis of Results</h3><p id="daa47983-11a8-4678-a08b-7ceafcec6f2f" class="">Note: Students made a mistake, and had high school students also fill this out. So the demographic is actually 15-25</p><figure id="eeb641d1-bff4-4232-8221-af525a6c1e20"><div class="source"><a href="Evergy%20083e76d888074fd2a94e5b45060132a1/KC_Line_Worker_Career_Survey_Responses_Final.xlsx">KC_Line_Worker_Career_Survey_Responses_Final.xlsx</a></div></figure><p id="dddb06ce-e5ca-4b2b-a25b-291f39c61f2a" class="">
-</p><figure id="84880027-884a-49d8-8e01-7e49b41a2527" class="image"><a href="Evergy%20083e76d888074fd2a94e5b45060132a1/Untitled.png"><img style="width:912px" src="Evergy%20083e76d888074fd2a94e5b45060132a1/Untitled.png"/></a></figure><figure id="d432dbcb-5045-4481-8da4-15abf9688617" class="image"><a href="Evergy%20083e76d888074fd2a94e5b45060132a1/Untitled%201.png"><img style="width:912px" src="Evergy%20083e76d888074fd2a94e5b45060132a1/Untitled%201.png"/></a></figure><figure id="9bc7d9d3-a0fc-4f36-8cf7-9b26df9c65ad" class="image"><a href="Evergy%20083e76d888074fd2a94e5b45060132a1/Untitled%202.png"><img style="width:960px" src="Evergy%20083e76d888074fd2a94e5b45060132a1/Untitled%202.png"/></a></figure><figure id="7a863c07-c296-4adc-9b14-53034b7a9176" class="image"><a href="Evergy%20083e76d888074fd2a94e5b45060132a1/Untitled%203.png"><img style="width:912px" src="Evergy%20083e76d888074fd2a94e5b45060132a1/Untitled%203.png"/></a></figure><figure id="249804f9-0ead-4fac-a543-6e4e027a8542" class="image"><a href="Evergy%20083e76d888074fd2a94e5b45060132a1/Untitled%204.png"><img style="width:912px" src="Evergy%20083e76d888074fd2a94e5b45060132a1/Untitled%204.png"/></a></figure><figure id="e95e3ed9-3e66-403a-9a3e-006a43f5d8f8" class="image"><a href="Evergy%20083e76d888074fd2a94e5b45060132a1/Untitled%205.png"><img style="width:912px" src="Evergy%20083e76d888074fd2a94e5b45060132a1/Untitled%205.png"/></a></figure><figure id="f9eae0f0-2376-421f-9e57-71014fc580ee" class="image"><a href="Evergy%20083e76d888074fd2a94e5b45060132a1/Untitled%206.png"><img style="width:960px" src="Evergy%20083e76d888074fd2a94e5b45060132a1/Untitled%206.png"/></a></figure><p id="d2caee2a-2c12-44e4-982b-c28cc34f16a1" class="">Here are the key findings from the survey data represented as graphs:</p><ol type="1" id="a7ac51cf-ef26-43a3-a1cc-607fb7bf3a46" class="numbered-list" start="1"><li><strong>Age Distribution:</strong><ul id="d32a9582-499b-4263-9fea-a833f188e97c" class="bulleted-list"><li style="list-style-type:disc">The age distribution shows a relatively even split among the three age groups (18-20, 21-23, 24-25).</li></ul></li></ol><ol type="1" id="66904336-ee18-4125-a4d7-f875f0132566" class="numbered-list" start="2"><li><strong>Gender Distribution:</strong><ul id="a3358bf4-ea73-4645-9840-0340b1b0c7c6" class="bulleted-list"><li style="list-style-type:disc">The gender distribution is diverse, with female respondents being the most represented</li></ul></li></ol><ol type="1" id="0e45ce8d-5d91-495e-b85c-7dd584d41371" class="numbered-list" start="3"><li><strong>Education Level Distribution:</strong><ul id="2987cd81-dbb5-4865-a1d0-5ce70461dc03" class="bulleted-list"><li style="list-style-type:disc">Respondents have varied educational backgrounds, with an equal distribution among those with a high school diploma, a bachelor&#x27;s degree, and other education levels.</li></ul></li></ol><ol type="1" id="c7c2a69d-8820-4486-93c2-01c2daf68b7e" class="numbered-list" start="4"><li><strong>Current Employment Status:</strong><ul id="82df8236-4f87-48c7-9806-2244ecd71e92" class="bulleted-list"><li style="list-style-type:disc">The majority of respondents are either employed part-time or unemployed, with a smaller proportion being students.</li></ul></li></ol><ol type="1" id="7af9ec6c-6dff-4b56-a49f-d696d4d41cf3" class="numbered-list" start="5"><li><strong>Awareness of Line Worker Career:</strong><ul id="80f70e22-2a65-4cd1-b043-0e16c292bab1" class="bulleted-list"><li style="list-style-type:disc">More respondents are unaware of the line worker career than those who are aware of it.</li></ul></li></ol><ol type="1" id="b887ff76-8e90-4f8e-8792-19d482295651" class="numbered-list" start="6"><li><strong>Perception of Line Work:</strong><ul id="078b43e6-c3d7-4d5a-af0b-81a85adcea52" class="bulleted-list"><li style="list-style-type:disc">The perception of line work is mostly positive, with a majority rating it as 4 on a scale of 1 to 5.</li></ul></li></ol><ol type="1" id="c63249a7-fbf3-47ee-ab70-7dda7b51c3e4" class="numbered-list" start="7"><li><strong>Consideration of Line Worker Career:</strong><ul id="04f349ec-b953-4e44-ba5b-3730be3f31f4" class="bulleted-list"><li style="list-style-type:disc">Most respondents are uncertain about considering a line worker career, with a few outright rejecting it.</li></ul><figure id="6fe5c0c6-6c3a-4e3a-9afe-bcac05bcc076" class="image" style="text-align:center"><a href="Evergy%20083e76d888074fd2a94e5b45060132a1/Untitled%207.png"><img style="width:1248px" src="Evergy%20083e76d888074fd2a94e5b45060132a1/Untitled%207.png"/></a></figure><figure id="570113ec-1eed-4a7d-bb7a-94263eed5ea6" class="image" style="text-align:center"><a href="Evergy%20083e76d888074fd2a94e5b45060132a1/Untitled%208.png"><img style="width:1104px" src="Evergy%20083e76d888074fd2a94e5b45060132a1/Untitled%208.png"/></a></figure><figure id="fe5ad6b7-b6c2-40f3-b685-b463d2990c87" class="image" style="text-align:center"><a href="Evergy%20083e76d888074fd2a94e5b45060132a1/Untitled%209.png"><img style="width:1104px" src="Evergy%20083e76d888074fd2a94e5b45060132a1/Untitled%209.png"/></a></figure><figure id="d42d8860-84aa-4007-bfb0-6cab7ab823f2" class="image" style="text-align:center"><a href="Evergy%20083e76d888074fd2a94e5b45060132a1/Untitled%2010.png"><img style="width:1008px" src="Evergy%20083e76d888074fd2a94e5b45060132a1/Untitled%2010.png"/></a></figure><h3 id="e6d9c6ff-f08a-4d6d-ba0e-85cfe7310f73" class=""><strong>Deeper Analysis and Insights</strong></h3><h3 id="4f568cdf-8911-4619-97f6-57930869300c" class=""><strong>1. Cross-tabulation of Awareness and Consideration of Line Worker Career</strong></h3><table id="7b77b869-9377-4f59-ba83-3e9a5027c109" class="simple-table"><tbody><tr id="c775e0cb-3284-4d3b-8f35-bd9df1df2036"><td id="yzyz" class=""><strong>Awareness of Line Worker Career</strong></td><td id="On\@" class=""><strong>Maybe</strong></td><td id="ki[@" class=""><strong>No</strong></td><td id="L;;W" class=""><strong>Yes</strong></td></tr><tr id="a2bfdefb-4652-4dc2-8c90-091ba680e3c1"><td id="yzyz" class="">No</td><td id="On\@" class="">9</td><td id="ki[@" class="">7</td><td id="L;;W" class="">10</td></tr><tr id="cf5bf4be-3624-4e1d-a2df-3640ee5cee8d"><td id="yzyz" class="">Yes</td><td id="On\@" class="">8</td><td id="ki[@" class="">10</td><td id="L;;W" class="">6</td></tr></tbody></table><p id="fce97e32-fef8-40d5-8c4f-0e37e14a4a7d" class=""><strong>Insights:</strong></p><ul id="ec4f73a8-5767-49df-8287-cdde5ddccfac" class="bulleted-list"><li style="list-style-type:disc">Those unaware of the line worker career have a higher tendency to say &quot;Yes&quot; or &quot;Maybe&quot; when considering the career, but also a significant number saying &quot;No.&quot;</li></ul><ul id="b62022d9-fddc-4d69-a5d3-d9d05302a652" class="bulleted-list"><li style="list-style-type:disc">Awareness doesn&#x27;t strongly correlate with a positive consideration; rather, it shows mixed responses.</li></ul><h3 id="6a50fd98-d81f-4621-9cdc-22339de96134" class=""><strong>2. Influence of Education Level on Perception and Consideration</strong></h3><ul id="3512c7f1-2b78-489b-961a-eb912de9d947" class="bulleted-list"><li style="list-style-type:disc"><strong>Perception by Education Level:</strong><ul id="f68c0001-4f63-4e48-9dc7-8b1017eda48a" class="bulleted-list"><li style="list-style-type:circle">Individuals with a Bachelor&#x27;s degree tend to have a higher perception rating of the line work career.</li></ul><ul id="22549bab-152d-4833-9722-697adc4c8448" class="bulleted-list"><li style="list-style-type:circle">Those with &quot;Other&quot; education levels show more variability in their perception.</li></ul></li></ul><ul id="b0de48a9-01a5-4860-8848-3a1bda971da4" class="bulleted-list"><li style="list-style-type:disc"><strong>Consideration by Education Level:</strong><ul id="0848e4bf-58c2-45ea-b1ea-2b3e75e8cc50" class="bulleted-list"><li style="list-style-type:circle">Respondents with a Bachelor&#x27;s degree are more likely to consider the line worker career (&quot;Maybe&quot;).</li></ul><ul id="c05d59f3-41a9-49c5-ae5d-8126a9934455" class="bulleted-list"><li style="list-style-type:circle">Those with &quot;Other&quot; education levels show a higher tendency to say &quot;No&quot; or &quot;Maybe.&quot;</li></ul></li></ul><h3 id="c5d4cb39-8831-47e5-9f7f-075562aaa225" class=""><strong>3. Current Employment Status and Its Impact on Career Consideration</strong></h3><p id="2ded928c-68aa-46a9-a2ea-993488e565a0" class=""><strong>Insights:</strong></p><ul id="108c57a0-ea8a-4599-aeac-818db60f5521" class="bulleted-list"><li style="list-style-type:disc">Students and unemployed individuals show a higher likelihood of considering the line worker career (&quot;Maybe&quot;).</li></ul><ul id="028a51a0-04a6-4643-aa84-5398dc6118d9" class="bulleted-list"><li style="list-style-type:disc">Employed part-time individuals are more evenly distributed across all consideration options.</li></ul><h3 id="e1a9b035-8883-4ec2-86a4-28f4a65e3cb9" class=""><strong>4. Correlation Analysis</strong></h3><p id="b4799a58-894b-41a3-a54a-08fb14d614c8" class=""><strong>Correlation Matrix Insights:</strong></p><ul id="abec2ed6-7ca6-40e4-99f5-678e3dd4b506" class="bulleted-list"><li style="list-style-type:disc">There is a moderate positive correlation between &quot;Perception of Line Work&quot; and &quot;Consider Line Worker Career&quot; (0.48). This indicates that a higher perception of line work is somewhat associated with a greater likelihood of considering it.</li></ul><ul id="201ee1ec-5aaf-498d-816a-f970e819f76e" class="bulleted-list"><li style="list-style-type:disc">&quot;Current Employment Status&quot; and &quot;Consider Line Worker Career&quot; show a weak negative correlation (-0.27), suggesting that being currently employed (especially part-time) slightly reduces the likelihood of considering a line worker career.</li></ul><ul id="af1d88f0-f8d5-439e-bdb5-4415ace5d20a" class="bulleted-list"><li style="list-style-type:disc">&quot;Aware of Line Worker Career&quot; has a weak negative correlation with &quot;Consider Line Worker Career&quot; (-0.21), indicating that awareness alone does not significantly drive consideration.</li></ul><h3 id="704e4ab9-465c-4edf-97c5-6850a02688f4" class=""><strong>Recommendations</strong></h3><p id="b30162dc-0939-4e84-88af-ab84b3336335" class="">Based on the deeper analysis, here are some targeted recommendations:</p><ol type="1" id="a1d89fbc-0786-42b1-b264-478b2a303334" class="numbered-list" start="1"><li><strong>Targeted Information Campaigns:</strong><ul id="3f8d8228-0742-4d24-878d-9385c42e9066" class="bulleted-list"><li style="list-style-type:disc">Focus on providing detailed information to those currently unaware of the line worker career, emphasizing the benefits and addressing the common concerns such as physical demands and safety.</li></ul></li></ol><ol type="1" id="46f85272-b906-4768-a4ba-2d87bee1851e" class="numbered-list" start="2"><li><strong>Leverage Education Channels:</strong><ul id="2c3aac00-7293-4eee-8c11-d15c40106210" class="bulleted-list"><li style="list-style-type:disc">Utilize educational institutions, especially colleges, to provide workshops and seminars about the line worker career, highlighting success stories and potential growth opportunities.</li></ul></li></ol><ol type="1" id="2bac14ce-a066-47b7-b6fc-5873a1c9b7cd" class="numbered-list" start="3"><li><strong>Tailored Messaging for Different Employment Statuses:</strong><ul id="3b70d633-da88-4cbe-8f07-ae7d3a8a6fbc" class="bulleted-list"><li style="list-style-type:disc">For students and unemployed individuals, emphasize the stability and growth opportunities in the line worker career.</li></ul><ul id="4f2ee25a-b763-43a8-9262-3821ebb1168d" class="bulleted-list"><li style="list-style-type:disc">For part-time employed individuals, showcase the benefits of transitioning to a full-time, stable career with potential for advancement.</li></ul></li></ol><ol type="1" id="c9883950-60f7-45ad-b4ce-114b98ea37ad" class="numbered-list" start="4"><li><strong>Enhance Perception through Positive Testimonials:</strong><ul id="d556c680-b4be-4198-abbe-82c2ca9a090a" class="bulleted-list"><li style="list-style-type:disc">Use testimonials from current line workers to improve the perception of the career, focusing on job satisfaction, safety measures, and work-life balance.</li></ul></li></ol><p id="2927c686-e4af-4c86-82b9-eb7f5e0de365" class="">By implementing these strategies, it may be possible to better address the concerns and motivations of young adults in Kansas City regarding the line worker career, ultimately increasing interest and consideration.</p><h1 id="72c9f370-65c7-4fc6-92f0-cb1ec06e95cf" class="">Website Mockups</h1><figure id="3fd527f5-b59f-4456-927f-d066997774c2"><div class="source"><a href="Evergy%20083e76d888074fd2a94e5b45060132a1/Electrifying_your_connection_(2).pdf">Electrifying your connection (2).pdf</a></div></figure><figure id="d6e1c056-0e9c-44cf-9d48-ad29684765ed" class="image"><a href="Evergy%20083e76d888074fd2a94e5b45060132a1/Home.jpg"><img style="width:1442px" src="Evergy%20083e76d888074fd2a94e5b45060132a1/Home.jpg"/></a></figure><figure id="8fab3b9f-58ee-4b27-94ba-1b3e4198dcd7" class="image"><a href="Evergy%20083e76d888074fd2a94e5b45060132a1/About_us.jpg"><img style="width:1440px" src="Evergy%20083e76d888074fd2a94e5b45060132a1/About_us.jpg"/></a></figure><p id="ad6f275b-a944-47dd-a47b-6b061c143367" class="">
-</p><figure id="ea387f21-3ced-4f70-a4d7-656f9dfa2acd" class="image"><a href="Evergy%20083e76d888074fd2a94e5b45060132a1/2.jpg"><img style="width:1440px" src="Evergy%20083e76d888074fd2a94e5b45060132a1/2.jpg"/></a></figure><figure id="5dabb2af-bd67-4315-b005-7f19f436ab86" class="image"><a href="Evergy%20083e76d888074fd2a94e5b45060132a1/3.jpg"><img style="width:1440px" src="Evergy%20083e76d888074fd2a94e5b45060132a1/3.jpg"/></a></figure><figure id="e2d5a40d-a4ad-4329-96ba-402d742713e5" class="image"><a href="Evergy%20083e76d888074fd2a94e5b45060132a1/Electrifying_your_connection_(1).gif"><img style="width:1440px" src="Evergy%20083e76d888074fd2a94e5b45060132a1/Electrifying_your_connection_(1).gif"/></a></figure></li></ol></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evergy Project Overview</title>
+    <style>
+        :root {
+            --bs-primary: #00334C;
+            --bs-secondary: #56B2CB;
+            --bs-third: #F7E214;
+            --bs-fourth: #818387;
+            --bs-white: #ffffff;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--bs-primary);
+            color: var(--bs-white);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+        .container {
+            max-width: 1200px;
+            background: var(--bs-white);
+            padding: 2em;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin: 2em;
+        }
+        h1 {
+            color: var(--bs-primary);
+            font-size: 2.5em;
+            margin-bottom: 0.5em;
+        }
+        p {
+            line-height: 1.6;
+            color: var(--bs-primary);
+            font-size: 1.1em;
+        }
+        .button-container {
+            margin-top: 2em;
+        }
+        .button {
+            background-color: var(--bs-third);
+            color: var(--bs-primary);
+            padding: 1em 2em;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: center;
+            display: inline-block;
+            margin: 1em;
+            font-weight: bold;
+            font-size: 1.1em;
+            text-decoration: none;
+        }
+        .button:hover {
+            background-color: #E6D800;
+        }
+    </style>
+    <script src="https://unpkg.com/htmx.org@1.9.12"></script>
+</head>
+<body>
+    <div class="container">
+        <div id="navbar" hx-get="../nav.html" hx-trigger="load"></div>
+        <header>
+            <h1>Evergy Project Overview</h1>
+        </header>
+        <main>
+            <p>Welcome to the Evergy Project Overview page! This project aims to explore and enhance the career opportunities and website experience for Evergy. Our efforts have been divided into two key areas:</p>
+            <p><strong>1. Survey and Data Analysis:</strong> We conducted a comprehensive survey to understand the career preferences and perceptions of potential line workers in Kansas City. The results provide valuable insights into the factors influencing career choices and highlight opportunities to improve awareness and perception of line worker careers.</p>
+            <p><strong>2. Website Redesign Mockups:</strong> Our talented students have reimagined the Evergy website, creating mockups that make the site more engaging and user-friendly. Their innovative designs reflect a fresh perspective and a keen understanding of user needs, ensuring a better overall experience.</p>
+            <div class="button-container">
+                <a href="data.html" class="button">View Survey Results</a>
+                <a href="redesign.html" class="button">View Website Mockups</a>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

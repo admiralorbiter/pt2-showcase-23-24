@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evergy - Survey Results</title>
+    <style>
+        :root {
+            --bs-primary: #00334C;
+            --bs-secondary: #56B2CB;
+            --bs-third: #F7E214;
+            --bs-fourth: #818387;
+            --bs-white: #ffffff;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--bs-primary);
+            color: var(--bs-fourth);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .container {
+            max-width: 900px;
+            background: var(--bs-white);
+            padding: 2em;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-top: 2em;
+        }
+        h1, h3 {
+            color: var(--bs-primary);
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 0.5em;
+        }
+        h3 {
+            font-size: 1.5em;
+            margin-top: 1.5em;
+        }
+        p {
+            line-height: 1.6;
+            color: var(--bs-primary);
+        }
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1em;
+        }
+        .results-table th, .results-table td {
+            border: 1px solid #ddd;
+            padding: 0.75em;
+            text-align: left;
+        }
+        .results-table th {
+            background-color: var(--bs-secondary);
+            color: var(--bs-white);
+        }
+        .results-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .results-table tr:hover {
+            background-color: var(--bs-secondary);
+            color: var(--bs-white);
+        }
+        .button {
+            background-color: var(--bs-third);
+            color: var(--bs-primary);
+            padding: 0.5em 1em;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: center;
+            display: inline-block;
+            margin-top: 2em;
+            font-weight: bold;
+        }
+        .button:hover {
+            background-color: #E6D800;
+        }
+        .link {
+            margin-top: 1.5em;
+            text-align: center;
+        }
+        .link a {
+            color: var(--bs-secondary);
+            text-decoration: none;
+        }
+        .link a:hover {
+            text-decoration: underline;
+        }
+        .image-container {
+            text-align: center;
+            margin: 1.5em 0;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 1em 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Evergy</h1>
+            <p class="text-center">Survey Results and Data Analysis</p>
+            <div class="link">
+                <a href="survey.html" class="button">See the Survey</a>
+            </div>
+            <div class="excel-link">
+                <a href="../Evergy/KC_Line_Worker_Career_Survey_Responses_Final.xlsx">Download Full Survey Data (Excel)</a>
+            </div>
+        </header>
+        <main>
+            <h3>Key Findings</h3>
+            <p><strong>Age Distribution:</strong> The age distribution shows a relatively even split among the three age groups (18-20, 21-23, 24-25).</p>
+            <div class="image-container">
+                <img src="../img/evergy/agedistribution.png" alt="Age Distribution">
+            </div>
+            <p><strong>Gender Distribution:</strong> The gender distribution is diverse, with female respondents being the most represented.</p>
+            <div class="image-container">
+                <img src="../img/evergy/genderdistribution.png" alt="Gender Distribution">
+            </div>
+            <p><strong>Education Level Distribution:</strong> Respondents have varied educational backgrounds, with an equal distribution among those with a high school diploma, a bachelor's degree, and other education levels.</p>
+            <div class="image-container">
+                <img src="../img/evergy/educationleveldistribution.png" alt="Education Level Distribution">
+            </div>
+            <p><strong>Current Employment Status:</strong> The majority of respondents are either employed part-time or unemployed, with a smaller proportion being students.</p>
+            <div class="image-container">
+                <img src="../img/evergy/currentemploymentstatus.png" alt="Current Employment Status">
+            </div>
+            <p><strong>Awareness of Line Worker Career:</strong> More respondents are unaware of the line worker career than those who are aware of it.</p>
+            <div class="image-container">
+                <img src="../img/evergy/awarenessoflineworkercareeer.png" alt="Awareness of Line Worker Career">
+            </div>
+            <p><strong>Perception of Line Work:</strong> The perception of line work is mostly positive, with a majority rating it as 4 on a scale of 1 to 5.</p>
+            <div class="image-container">
+                <img src="../img/evergy/perceptionoflinework.png" alt="Perception of Line Work">
+            </div>
+            <p><strong>Consideration of Line Worker Career:</strong> Most respondents are uncertain about considering a line worker career, with a few outright rejecting it.</p>
+            <div class="image-container">
+                <img src="../img/evergy/considerationoflineworkercareer.png" alt="Consideration of Line Worker Career">
+            </div>
+
+            <h3>Data Analysis</h3>
+            <table class="results-table">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Awareness of Line Worker Career</td>
+                        <td>Those unaware of the line worker career have a higher tendency to say "Yes" or "Maybe" when considering the career, but also a significant number saying "No."</td>
+                    </tr>
+                    <tr>
+                        <td>Perception by Education Level</td>
+                        <td>Individuals with a Bachelor's degree tend to have a higher perception rating of the line work career. Those with "Other" education levels show more variability in their perception.</td>
+                    </tr>
+                    <tr>
+                        <td>Consideration by Education Level</td>
+                        <td>Respondents with a Bachelor's degree are more likely to consider the line worker career ("Maybe"). Those with "Other" education levels show a higher tendency to say "No" or "Maybe."</td>
+                    </tr>
+                    <tr>
+                        <td>Current Employment Status</td>
+                        <td>Students and unemployed individuals show a higher likelihood of considering the line worker career ("Maybe"). Employed part-time individuals are more evenly distributed across all consideration options.</td>
+                    </tr>
+                    <tr>
+                        <td>Correlation Analysis</td>
+                        <td>
+                            <ul>
+                                <li>Moderate positive correlation between "Perception of Line Work" and "Consider Line Worker Career" (0.48).</li>
+                                <li>Weak negative correlation between "Current Employment Status" and "Consider Line Worker Career" (-0.27).</li>
+                                <li>Weak negative correlation between "Aware of Line Worker Career" and "Consider Line Worker Career" (-0.21).</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="image-container">
+                <img src="../img/evergy/correlationmatrix.png" alt="Correlation Matrix">
+            </div>
+
+            <h3>Recommendations</h3>
+            <ol>
+                <li><strong>Targeted Information Campaigns:</strong> Focus on providing detailed information to those currently unaware of the line worker career, emphasizing the benefits and addressing common concerns such as physical demands and safety.</li>
+                <li><strong>Leverage Education Channels:</strong> Utilize educational institutions, especially colleges, to provide workshops and seminars about the line worker career, highlighting success stories and potential growth opportunities.</li>
+                <li><strong>Tailored Messaging for Different Employment Statuses:</strong> For students and unemployed individuals, emphasize the stability and growth opportunities in the line worker career. For part-time employed individuals, showcase the benefits of transitioning to a full-time, stable career with potential for advancement.</li>
+                <li><strong>Enhance Perception through Positive Testimonials:</strong> Use testimonials from current line workers to improve the perception of the career, focusing on job satisfaction, safety measures, and work-life balance.</li>
+            </ol>
+        </main>
+    </div>
+</body>
+</html>

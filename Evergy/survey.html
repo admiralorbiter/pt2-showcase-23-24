@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evergy - Survey and Data Analysis</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .container {
+            max-width: 900px;
+            background: #fff;
+            padding: 2em;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-top: 2em;
+        }
+        h1, h3 {
+            color: #0056b3;
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 0.5em;
+        }
+        h3 {
+            font-size: 1.5em;
+            margin-top: 1.5em;
+        }
+        ol {
+            padding-left: 1.2em;
+        }
+        ol > li {
+            margin-bottom: 1em;
+        }
+        li {
+            margin: 0.5em 0;
+        }
+        .bulleted-list {
+            list-style-type: disc;
+            margin-left: 1.5em;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.3em;
+        }
+        input, select {
+            width: 100%;
+            padding: 0.5em;
+            margin-top: 0.2em;
+            margin-bottom: 1em;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="checkbox"] {
+            width: auto;
+            margin-top: 0;
+        }
+        .button {
+            background-color: #0056b3;
+            color: white;
+            padding: 0.5em 1em;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #004494;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Evergy</h1>
+            <p>Survey and Data Analysis</p>
+        </header>
+        <main>
+            <h3>Survey on Career Choices: Focus on Line Work in Kansas City</h3>
+
+            <h3>Part 1: Demographic Information</h3>
+            <ol>
+                <li>
+                    <label for="age">Age</label>
+                    <select id="age" name="age">
+                        <option value="18-20">18-20</option>
+                        <option value="21-23">21-23</option>
+                        <option value="24-25">24-25</option>
+                    </select>
+                </li>
+                <li>
+                    <label for="gender">Gender</label>
+                    <select id="gender" name="gender">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="non-binary">Non-binary</option>
+                        <option value="prefer-not-to-say">Prefer not to say</option>
+                    </select>
+                </li>
+                <li>
+                    <label for="education">Education Level</label>
+                    <select id="education" name="education">
+                        <option value="high-school">High School</option>
+                        <option value="some-college">Some College</option>
+                        <option value="associate-degree">Associate Degree</option>
+                        <option value="bachelor-degree">Bachelor's Degree</option>
+                        <option value="other">Other</option>
+                    </select>
+                </li>
+                <li>
+                    <label for="employment">Current Employment Status</label>
+                    <select id="employment" name="employment">
+                        <option value="full-time">Employed Full-Time</option>
+                        <option value="part-time">Employed Part-Time</option>
+                        <option value="unemployed">Unemployed</option>
+                        <option value="student">Student</option>
+                    </select>
+                </li>
+            </ol>
+
+            <h3>Part 2: Awareness and Perception</h3>
+            <ol>
+                <li>
+                    <label>Are you aware of career opportunities as a line worker?</label>
+                    <label><input type="radio" name="aware" value="yes"> Yes</label>
+                    <label><input type="radio" name="aware" value="no"> No</label>
+                </li>
+                <li>
+                    <label>How did you learn about line work as a career option? (Select all that apply)</label>
+                    <label><input type="checkbox" name="learn[]" value="school"> School or college</label>
+                    <label><input type="checkbox" name="learn[]" value="job-fairs"> Job fairs</label>
+                    <label><input type="checkbox" name="learn[]" value="online"> Online</label>
+                    <label><input type="checkbox" name="learn[]" value="friends-family"> Friends or family</label>
+                    <label><input type="checkbox" name="learn[]" value="other"> Other</label>
+                </li>
+                <li>
+                    <label for="perception">What is your perception of line work? (Rate from 1 - Very Negative to 5 - Very Positive)</label>
+                    <input type="number" id="perception" name="perception" min="1" max="5">
+                </li>
+            </ol>
+
+            <h3>Part 3: Influencing Factors</h3>
+            <ol>
+                <li>
+                    <label>What factors influence your career choice the most? (Select up to three)</label>
+                    <label><input type="checkbox" name="factors[]" value="salary"> Salary</label>
+                    <label><input type="checkbox" name="factors[]" value="job-security"> Job security</label>
+                    <label><input type="checkbox" name="factors[]" value="work-environment"> Work environment</label>
+                    <label><input type="checkbox" name="factors[]" value="physical-demands"> Physical demands</label>
+                    <label><input type="checkbox" name="factors[]" value="interest"> Interest in the field</label>
+                    <label><input type="checkbox" name="factors[]" value="family-influence"> Influence from family or friends</label>
+                    <label><input type="checkbox" name="factors[]" value="career-growth"> Career growth opportunities</label>
+                    <label><input type="checkbox" name="factors[]" value="other"> Other</label>
+                </li>
+                <li>
+                    <label>Would you consider a career as a line worker?</label>
+                    <label><input type="radio" name="consider" value="yes"> Yes</label>
+                    <label><input type="radio" name="consider" value="no"> No</label>
+                    <label><input type="radio" name="consider" value="maybe"> Maybe</label>
+                </li>
+                <li>
+                    <label>If you answered 'No' or 'Maybe' to the previous question, what are the main reasons? (Select all that apply)</label>
+                    <label><input type="checkbox" name="reasons[]" value="lack-of-info"> Lack of information about the role</label>
+                    <label><input type="checkbox" name="reasons[]" value="perceived-danger"> Perceived danger</label>
+                    <label><input type="checkbox" name="reasons[]" value="physical-demands"> Physical demands</label>
+                    <label><input type="checkbox" name="reasons[]" value="lack-of-interest"> Lack of interest in the field</label>
+                    <label><input type="checkbox" name="reasons[]" value="salary-concerns"> Salary concerns</label>
+                    <label><input type="checkbox" name="reasons[]" value="lack-of-training"> Lack of training or educational opportunities</label>
+                    <label><input type="checkbox" name="reasons[]" value="other"> Other</label>
+                </li>
+            </ol>
+
+            <h3>Part 4: Additional Insights</h3>
+            <ol>
+                <li>
+                    <label for="attract">What could potentially attract you to a career as a line worker? (Open-ended)</label>
+                    <input type="text" id="attract" name="attract">
+                </li>
+                <li>
+                    <label for="comments">Do you have any additional comments or suggestions regarding career choice and line work? (Open-ended)</label>
+                    <input type="text" id="comments" name="comments">
+                </li>
+            </ol>
+
+            <button class="button">Submit</button>
+        </main>
+    </div>
+</body>
+</html>
