@@ -8,13 +8,159 @@
     <link href="../css/style.css" rel="stylesheet" type="text/css" id="theme-style"/>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/htmx.org@1.9.12"></script>
+    <style>
+      .gallery {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 1rem;
+      }
+      .gallery-item {
+          position: relative;
+          overflow: hidden;
+          flex: 1 1 calc(20% - 1rem);
+      }
+      .gallery-item img {
+          width: 100%;
+          height: auto;
+          transition: transform 0.3s ease;
+      }
+      .gallery-item:hover img {
+          transform: scale(1.1);
+      }
+      .gallery-item:hover .overlay {
+          opacity: 1;
+      }
+      .overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.5);
+          color: whitesmoke;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          opacity: 0;
+          transition: opacity 0.3s ease;
+          font-size: 1.25rem;
+          text-align: center;
+      }
+      .overlay a {
+          color: whitesmoke;
+          text-decoration: none;
+      }
+    </style>
   </head>
-  <body>
+  <body class="container mb-5">
     <div id="navbar" hx-get="../nav.html" hx-trigger="load"></div>
-    <main>
-        <h1>Test</h1>
-        <h2>Test</h2>
-        <p>Test</p>
-    </main>
+    <main class="container text-light">
+      <h1 class="text-center mb-4">Game Development</h1>
+      <h2 class="text-center mb-4">Visual Novel</h2>
+      <p class="text-center">In Collaboration with Pathways to Design: Ruskin High School and Grandview High School students</p>
+
+      <p>The students of the Pathways to Tech program have embarked on an exciting venture into the world of interactive storytelling. They are diligently crafting design documents, laying the foundation for visual novel projects using Ren'Py, a popular visual novel engine. This hands-on experience allows students to delve into the intricacies of game design, character development, and narrative branching.</p>
+      <p>For those unfamiliar, a visual novel is a genre of game that blends together elements of literature and interactive media. It presents a story primarily through text, displayed on the screen along with character portraits, backgrounds, and often includes voice acting and sound effects. Player engagement is achieved through decision-making, which can lead to multiple endings and story arcs. It's a digital form of choose-your-own-adventure, where the player's choices shape the direction and outcome of the narrative. Visual novels often focus on storytelling, making them an excellent platform for those who love to weave together compelling narratives and create immersive experiences.</p>
+      <hr />
+      <div class="row">
+        <div class="col">
+          <h2 class="my-4">P2T Asset Request:</h2>
+          <ul>
+            <li><a href="https://www.canva.com/design/DAGBv9FHK-M/SDe8zEAv4Aaz9fkdbxnHLQ/edit?utm_content=DAGBv9FHK-M&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="text-decoration-none text-info">Visual Novels Assets Request Document</a></li>
+          </ul>
+        </div>
+        <div class="col">
+          <p>The Pathways to Technology students have meticulously crafted the final assets required for the visual novel projects in collaboration with the Pathways to Design students. These assets are the culmination of their hard work and dedication throughout the semester.</p>
+        </div>
+      </div>
+      <div class="row g-4 my-4">
+          <div class="col-lg-6">
+              <div class="card text-dark">
+                  <div class="card-body">
+                      <h3 class="card-title">Hunters Academy</h3>
+                      <p class="card-text"><a href="https://docs.google.com/document/d/18S3zEB_i-MOmS_OIx-ud8huL8O7GoX_dr-ajUNU1lSE/edit" class="text-decoration-none text-primary">Design Document</a></p>
+                      <p>Step into the shadowy realm of "Hunters Academy," where the lines between the supernatural and the human blur in the mystical town of Portland, Maine, circa 1863. In a world where witches, werewolves, and vampires roam the streets, humans have taken up the mantle of Hunters to safeguard their existence from the unknown. Amid this ancient conflict, you'll navigate the intricate lives of characters bound by fate and shrouded in mystery.</p>
+                      <p>Set against a backdrop of a reimagined 1863 Portland, the game unfolds in a gothic, castle-like academy, offering not just education but mysteries and challenges. From the cobblestone streets of the human cities thriving in isolation to the eerie stillness of the creepy forests, each setting is a portal to another chapter of this enthralling saga. Engage in a narrative where every decision shapes the future, alliances are tested, and the boundary between friend and foe is ever-changing.</p>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-6">
+              <div class="card text-dark">
+                  <div class="card-body">
+                      <h3 class="card-title">Follow the Atlas - A Journey Through Time</h3>
+                      <p class="card-text"><a href="https://docs.google.com/document/d/1-yX7F2TWrdw9GNMouSIyPUjVzqtrVKQauOrLgoHvhm4/edit" class="text-decoration-none text-primary">Design Document</a></p>
+                      <p>Embark on a captivating journey through time in our student-built visual novel game, crafted using Ren'Py. As a 12-year-old time traveler, you'll navigate the intricate web of history and alternate realities in a quest to solve the ultimate mystery: who is responsible for the tragic demise of your aunt? Your adventure will lead you through diverse versions of the world, each brimming with secrets waiting to be uncovered.</p>
+                      <p>Along the way, you'll encounter a host of characters—some will become invaluable allies, while others may stand in your way. With each clue unraveled and mystery solved, you'll piece together the truth, making choices that shape your path through this rich, interactive story. Prepare to be immersed in a narrative where your decisions matter, friendships are forged, and the past and future are yours to explore.</p>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </main>
+      <!-- New Photo Gallery Section -->
+      <section class="my-5">
+        <h2 class="text-center mb-4">Student Work Gallery</h2>
+        <div class="gallery">
+            <div class="gallery-item">
+                <a href="artist1.html">
+                    <img src="../img/pic1.jpg" alt="Artwork by Artist 1" class="rounded">
+                    <div class="overlay">Artist 1</div>
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="artist2.html">
+                    <img src="../img/pic1.jpg" alt="Artwork by Artist 2" class="rounded">
+                    <div class="overlay">Artist 2</div>
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="artist3.html">
+                    <img src="../img/pic1.jpg" alt="Artwork by Artist 3" class="rounded">
+                    <div class="overlay">Artist 3</div>
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="artist4.html">
+                    <img src="../img/pic1.jpg" alt="Artwork by Artist 4" class="rounded">
+                    <div class="overlay">Artist 4</div>
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="artist5.html">
+                    <img src="../img/pic1.jpg" alt="Artwork by Artist 5" class="rounded">
+                    <div class="overlay">Artist 5</div>
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="artist6.html">
+                    <img src="../img/pic1.jpg" alt="Artwork by Artist 6" class="rounded">
+                    <div class="overlay">Artist 6</div>
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="artist7.html">
+                    <img src="../img/pic1.jpg" alt="Artwork by Artist 7" class="rounded">
+                    <div class="overlay">Artist 7</div>
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="artist8.html">
+                    <img src="../img/pic1.jpg" alt="Artwork by Artist 8" class="rounded">
+                    <div class="overlay">Artist 8</div>
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="artist9.html">
+                    <img src="../img/pic1.jpg" alt="Artwork by Artist 9" class="rounded">
+                    <div class="overlay">Artist 9</div>
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="artist10.html">
+                    <img src="../img/pic1.jpg" alt="Artwork by Artist 10" class="rounded">
+                    <div class="overlay">Artist 10</div>
+                </a>
+            </div>
+        </div>
+    </section>
   </body>
 </html>

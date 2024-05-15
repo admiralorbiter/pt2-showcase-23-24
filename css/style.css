@@ -22,3 +22,38 @@ body{
 .border-primary{
     border-color: var(--bs-third) !important;
 }
+
+.navbar-brand{
+    color: whitesmoke;
+}
+
+.nav-link{
+    color: whitesmoke;
+}
+
+.card {
+    background-color: var(--bs-secondary);
+    border: none;
+    border-radius: 10px;
+}
+
+.card-title {
+    color: var(--bs-primary);
+}
+
+.card-text a {
+    color: var(--bs-primary);
+    font-weight: bold;
+}
+
+.card-text a:hover {
+    color: var(--bs-fourth);
+}
+
+ul li a {
+    color: var(--bs-third);
+}
+
+ul li a:hover {
+    color: var(--bs-secondary);
+}
