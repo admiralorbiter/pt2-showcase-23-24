@@ -8,13 +8,88 @@
     <link href="../css/style.css" rel="stylesheet" type="text/css" id="theme-style"/>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/htmx.org@1.9.12"></script>
+    <style>
+      body {
+          background-color: #1a1a1a;
+          color: #ffffff;
+      }
+      .section {
+          padding: 20px 0;
+      }
+      .project-link a {
+          color: #17a2b8;
+          text-decoration: none;
+      }
+      .project-link a:hover {
+          text-decoration: underline;
+      }
+      .card {
+          background-color: #333;
+          border: none;
+      }
+      .card-title, .card-text {
+          color: #ffffff;
+      }
+      .icon {
+          font-size: 40px;
+          color: #17a2b8;
+      }
+  </style>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
   </head>
   <body class="container mb-5">
     <div id="navbar" hx-get="../nav.html" hx-trigger="load"></div>
     <main>
-        <h1>Web Devevelopment</h1>
-        <h2>Test</h2>
-        <p>Test</p>
+      <div class="container mt-5">
+        <h2 class="text-center mb-4">Web Development</h2>
+        <p class="text-center">Students have learned HTML/CSS along with professional and popular web builders like WordPress. Below are a few of the web development projects that students worked on, either in teams or individually.</p>
+        
+        <div class="section">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h4 class="card-title"><i class="fas fa-laptop-code icon"></i> PREP-KC Redesign</h4>
+                            <p class="card-text">Early in the year, we experienced a technical issue that caused significant data loss on our previous PREP-KC website. We quickly developed a new version aligned with our new tech stack. Students have been busy making tweaks, design changes, and ensuring the site meets accessibility standards. Over the summer, student interns will work on a final stylistic version of the website.</p>
+                            <p class="project-link"><a href="https://prepkc.org" target="_blank">prepkc.org</a></p>
+                            <img src="../img/prepkc.png" class="img-fluid" alt="PREP-KC website screenshot"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h4 class="card-title"><i class="fas fa-globe icon"></i> KABT Website</h4>
+                            <p class="card-text">Pathways to Tech students are responsible for hosting and maintaining the Kansas Association of Biology Teachers website, hosted on WordPress. This year, students made several tweaks and assisted with backend maintenance, including cleaning up the user database.</p>
+                            <p class="project-link"><a href="https://kabt.org" target="_blank">kabt.org</a></p>
+                            <img src="../img/kabt.png" class="img-fluid" alt="KABT website screenshot"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h4 class="card-title"><i class="fas fa-user-graduate icon"></i> Student Showcases</h4>
+                            <p class="card-text">Several students created portfolio websites using HTML/CSS, which you can view below.</p>
+                            <!-- Add links to student portfolio websites here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+  
     </main>
   </body>
 </html>
