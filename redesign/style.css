@@ -1,0 +1,95 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+.card {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 4em;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.card .letter {
+    z-index: 2;
+}
+
+.card .phrase {
+    display: none;
+    font-size: 1.5em;
+    margin-top: 20px;
+    z-index: 2;
+    color: #fff;
+    text-align: center;
+}
+
+#card1 {
+    background-color: #56B2CB; /* Light Blue */
+}
+
+#card2 {
+    background-color: #818387; /* Gray */
+}
+
+#card3 {
+    background-color: #00334C; /* Dark Blue */
+}
+
+#card4 {
+    background-color: #F7E214; /* Yellow */
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../img/pic1.jpg') no-repeat center center/cover; /* Change path to your image */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover {
+    flex: 3;
+    font-size: 2em;
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+.card:hover .letter {
+    display: none;
+}
+
+.card:hover .phrase {
+    display: block;
+}
+
+.container .card:not(:hover) {
+    flex: 1;
+    font-size: 4em;
+}
